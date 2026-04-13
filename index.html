@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sri Garlands 2025 | Handcrafted Floral Garlands</title>
+  <meta name="description" content="Handcrafted floral garlands for weddings, pooja, and all occasions. Fresh flowers, timely delivery. Order via Instagram or WhatsApp." />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a1a; background: #fff; }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 2.5rem;
+      background: #7B1A1A;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .nav-logo { color: #FFD580; font-size: 1.3rem; font-weight: 600; letter-spacing: 0.5px; }
+    .nav-logo span { color: #fff; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; transition: color 0.15s; }
+    .nav-links a:hover { color: #FFD580; }
+    .nav-cta {
+      background: #FFD580;
+      color: #7B1A1A;
+      border: none;
+      padding: 8px 22px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #7B2D2D 0%, #C0392B 40%, #8B1A4A 100%);
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-badge {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 span { color: #FFD580; }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.8);
+      margin: 0.75rem auto 2.5rem;
+      max-width: 480px;
+      line-height: 1.7;
+    }
+    .btn-primary {
+      background: #FFD580;
+      color: #7B2D2D;
+      border: none;
+      padding: 14px 36px;
+      border-radius: 30px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity 0.15s, transform 0.15s;
+    }
+    .btn-primary:hover { opacity: 0.9; transform: scale(1.02); }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      padding: 13px 32px;
+      border-radius: 30px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.15s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+    .hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hero-stats .stat { text-align: center; color: #fff; }
+    .hero-stats .stat-num { font-size: 1.8rem; font-weight: 700; color: #FFD580; }
+    .hero-stats .stat-label { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 2px; }
+
+    /* SECTIONS */
+    .section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #C0392B; margin-bottom: 0.75rem; }
+    .section-title { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+    .section-desc { font-size: 1rem; color: #666; max-width: 520px; line-height: 1.8; }
+
+    /* CATEGORIES */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+    .cat-card {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #eee;
+      cursor: pointer;
+      transition: transform 0.18s, box-shadow 0.18s;
+      background: #fafafa;
+    }
+    .cat-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+    .cat-img {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 72px;
+    }
+    .cat-img.wedding { background: linear-gradient(135deg, #FADADD, #F5A7B8); }
+    .cat-img.pooja { background: linear-gradient(135deg, #FFF0C0, #FFD580); }
+    .cat-img.decor { background: linear-gradient(135deg, #C8F0C0, #8FD45A); }
+    .cat-img.custom { background: linear-gradient(135deg, #C8DEFF, #8AB4F8); }
+    .cat-body { padding: 1rem 1.1rem 1.25rem; background: #fff; }
+    .cat-body h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .cat-body p { font-size: 13px; color: #777; line-height: 1.5; }
+
+    /* GALLERY */
+    .gallery-wrap { background: #FFF8F0; padding: 5rem 2rem; }
+    .gallery-inner { max-width: 1100px; margin: 0 auto; }
+    .gallery-header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 3rem;
+    }
+    .g-item {
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.18s;
+    }
+    .g-item:hover { transform: scale(1.02); }
+    .g-item.wide { grid-column: span 2; }
+    .g1 { background: linear-gradient(135deg, #F5A7B8, #C0392B); height: 240px; }
+    .g2 { background: linear-gradient(135deg, #FFD580, #E67E22); height: 240px; }
+    .g3 { background: linear-gradient(135deg, #8FD45A, #27AE60); height: 240px; }
+    .g4 { background: linear-gradient(135deg, #C8DEFF, #8AB4F8); height: 190px; }
+    .g5 { background: linear-gradient(135deg, #FADADD, #F5A7B8); height: 190px; }
+    .g6 { background: linear-gradient(135deg, #FFD580, #F5A7B8); height: 200px; }
+    .g-label {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.45);
+      color: #fff;
+      font-size: 11px;
+      font-family: inherit;
+      padding: 4px 12px;
+      border-radius: 10px;
+      white-space: nowrap;
+    }
+    .gallery-note { text-align: center; font-size: 13px; color: #999; margin-top: 1.25rem; }
+
+    /* WHY US */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .feat-card {
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+    .feat-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      margin-bottom: 1rem;
+    }
+    .feat-icon.red { background: #FADADD; }
+    .feat-icon.yellow { background: #FFF0C0; }
+    .feat-icon.green { background: #C8F0C0; }
+    .feat-icon.blue { background: #C8DEFF; }
+    .feat-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .feat-card p { font-size: 13px; color: #777; line-height: 1.6; }
+
+    /* TESTIMONIALS */
+    .test-wrap { background: #7B1A1A; padding: 5rem 2rem; }
+    .test-inner { max-width: 960px; margin: 0 auto; text-align: center; }
+    .test-inner .section-label { color: #FFD580; }
+    .test-inner .section-title { color: #fff; }
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+    .test-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 1.5rem;
+      text-align: left;
+    }
+    .stars { color: #FFD580; font-size: 14px; margin-bottom: 10px; }
+    .test-card p { color: rgba(255,255,255,0.85); font-size: 13px; line-height: 1.7; margin-bottom: 1rem; }
+    .test-author { font-size: 13px; font-weight: 600; color: #FFD580; }
+
+    /* ORDER CTA */
+    .cta-wrap { background: linear-gradient(135deg, #C0392B 0%, #8B1A4A 100%); padding: 5rem 2rem; text-align: center; }
+    .cta-wrap h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; color: #fff; margin-bottom: 0.75rem; }
+    .cta-wrap p { color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 2rem; }
+    .cta-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .cta-form input {
+      padding: 12px 20px;
+      border-radius: 30px;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 14px;
+      min-width: 200px;
+      outline: none;
+      font-family: inherit;
+    }
+    .cta-form input::placeholder { color: rgba(255,255,255,0.5); }
+    .cta-form input:focus { border-color: #FFD580; }
+    .social-links { display: flex; gap: 10px; margin-top: 1.5rem; justify-content: center; flex-wrap: wrap; }
+    .social-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.8);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 13px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    .social-btn:hover { background: rgba(255,213,128,0.2); color: #FFD580; }
+
+    /* FOOTER */
+    footer {
+      background: #3D0A0A;
+      padding: 3.5rem 2.5rem 2rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 2rem;
+      color: rgba(255,255,255,0.65);
+      font-size: 13px;
+    }
+    .footer-brand h3 { color: #FFD580; font-size: 1.25rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .footer-brand p { line-height: 1.7; }
+    .footer-social { display: flex; gap: 10px; margin-top: 1.2rem; flex-wrap: wrap; }
+    .footer-col h4 { color: #fff; font-size: 13px; font-weight: 600; margin-bottom: 0.75rem; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 7px; transition: color 0.15s; }
+    .footer-col a:hover { color: #FFD580; }
+    .footer-bottom {
+      background: #3D0A0A;
+      text-align: center;
+      padding: 1.25rem 2rem;
+      color: rgba(255,255,255,0.35);
+      font-size: 12px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 720px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      footer { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .g-item.wide { grid-column: span 1; }
+    }
+    @media (max-width: 460px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo">Sri<span>Garlands</span></div>
+  <div class="nav-links">
+    <a href="#collections">Collections</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#why-us">About</a>
+    <a href="#order">Contact</a>
+  </div>
+  <a href="#order" class="nav-cta">Order Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Fresh · Handcrafted · Delivered</div>
+  <h1>Sri<span>Garlands</span><br>2025</h1>
+  <p class="hero-subtitle">Handcrafted floral garlands for weddings, pooja, and all occasions — straight from the heart of tradition.</p>
+  <div class="hero-btns">
+    <a href="#gallery" class="btn-primary">View Gallery</a>
+    <a href="#order" class="btn-outline">Place an Order</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Happy Clients</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Fresh Flowers</div></div>
+    <div class="stat"><div class="stat-num">24hr</div><div class="stat-label">Same Day Delivery</div></div>
+  </div>
+</section>
+
+<!-- COLLECTIONS -->
+<div id="collections">
+  <div class="section">
+    <div class="section-label">What We Offer</div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <h2 class="section-title">Our Collections</h2>
+        <p class="section-desc">From sacred pooja garlands to lavish wedding decorations — every piece is made with love and fresh blooms.</p>
+      </div>
+    </div>
+    <div class="categories-grid">
+      <div class="cat-card">
+        <div class="cat-img wedding">💍</div>
+        <div class="cat-body">
+          <h3>Wedding Garlands</h3>
+          <p>Varmala, stage garlands, car decoration — make your big day unforgettable.</p>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img pooja">🪔</div>
+        <div class="cat-body">
+          <h3>Pooja &amp; Religious</h3>
+          <p>Traditional marigold, jasmine &amp; lotus garlands for all festivals and daily pooja.</p>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img decor">🏠</div>
+        <div class="cat-body">
+          <h3>Event Decoration</h3>
+          <p>Birthday, housewarming, naming ceremony — fresh floral setups for every occasion.</p>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img custom">✨</div>
+        <div class="cat-body">
+          <h3>Custom Orders</h3>
+          <p>Tell us your vision. We'll handcraft a garland exactly as you imagine it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div id="gallery" class="gallery-wrap">
+  <div class="gallery-inner">
+    <div class="gallery-header">
+      <div>
+        <div class="section-label">Our Work</div>
+        <h2 class="section-title" style="margin-bottom:0;">Fresh From Instagram</h2>
+      </div>
+      <a href="https://instagram.com/srigarlands2025" target="_blank" class="btn-primary" style="font-size:13px;padding:10px 22px;">Follow @srigarlands2025 ↗</a>
+    </div>
+    <div class="gallery-grid">
+      <!-- Replace the emoji + background with <img src="your-photo.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+      <div class="g-item g1"><span>🌸</span><span class="g-label">Wedding Varmala</span></div>
+      <div class="g-item g2"><span>🌼</span><span class="g-label">Pooja Garland</span></div>
+      <div class="g-item g3"><span>🌿</span><span class="g-label">Stage Decor</span></div>
+      <div class="g-item g4"><span>💐</span><span class="g-label">Door Toran</span></div>
+      <div class="g-item g5"><span>🌺</span><span class="g-label">Festival Special</span></div>
+      <div class="g-item g6 wide"><span>🌻</span><span class="g-label">Custom Arrangement</span></div>
+    </div>
+    <p class="gallery-note">📸 Replace the placeholder slots above with your real Instagram photos</p>
+  </div>
+</div>
+
+<!-- WHY US -->
+<div id="why-us">
+  <div class="section">
+    <div class="section-label">Why Choose Us</div>
+    <h2 class="section-title">Made with care, delivered with love</h2>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon red">🌸</div>
+        <h3>100% Fresh Flowers</h3>
+        <p>We source only the freshest blooms daily from local flower markets.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon yellow">🤝</div>
+        <h3>Handcrafted with Care</h3>
+        <p>Each garland is handmade by our skilled artisans — no machine shortcuts.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon green">🚚</div>
+        <h3>Timely Delivery</h3>
+        <p>We know time matters — especially for weddings. Guaranteed on-time delivery.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon blue">💬</div>
+        <h3>Easy Ordering</h3>
+        <p>Order via Instagram DM, WhatsApp, or directly from this website.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="test-wrap">
+  <div class="test-inner">
+    <div class="section-label">Testimonials</div>
+    <h2 class="section-title">What our customers say</h2>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"The wedding garlands were absolutely stunning. Fresh, fragrant, and delivered right on time. Everyone complimented them!"</p>
+        <div class="test-author">Priya S.</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"Ordered pooja garlands for Navratri — the jasmine and marigold were so fresh they lasted all week. Will order again!"</p>
+        <div class="test-author">Ramesh K.</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"Custom garland for my mother's 60th birthday. They understood exactly what I wanted. Truly beautiful work."</p>
+        <div class="test-author">Anitha M.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ORDER CTA -->
+<div id="order" class="cta-wrap">
+  <h2>Ready to place an order?</h2>
+  <p>Send us your requirements and we'll get back to you within the hour.</p>
+  <div class="cta-form">
+    <input type="text" placeholder="Your name" id="cta-name" />
+    <input type="text" placeholder="Phone / WhatsApp" id="cta-phone" />
+    <input type="text" placeholder="Occasion (Wedding, Pooja...)" id="cta-occasion" />
+  </div>
+  <button class="btn-primary" onclick="handleEnquiry()">Send Enquiry</button>
+  <div class="social-links">
+    <a href="https://instagram.com/srigarlands2025" target="_blank" class="social-btn">📷 Instagram @srigarlands2025</a>
+    <!-- Update the phone number below with your actual WhatsApp number -->
+    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="social-btn">💬 WhatsApp Us</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <h3>Sri Garlands 2025</h3>
+    <p>Handcrafted floral garlands for every sacred and joyful occasion in your life. Fresh flowers, traditional craft.</p>
+    <div class="footer-social">
+      <a href="https://instagram.com/srigarlands2025" target="_blank" class="social-btn">Instagram</a>
+      <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="social-btn">WhatsApp</a>
+    </div>
+  </div>
+  <div class="footer-col">
+    <h4>Collections</h4>
+    <a href="#collections">Wedding Garlands</a>
+    <a href="#collections">Pooja Garlands</a>
+    <a href="#collections">Event Decoration</a>
+    <a href="#collections">Custom Orders</a>
+  </div>
+  <div class="footer-col">
+    <h4>Get in Touch</h4>
+    <a href="https://instagram.com/srigarlands2025" target="_blank">@srigarlands2025</a>
+    <a href="#order">Order via WhatsApp</a>
+    <a href="#gallery">View Gallery</a>
+    <a href="#why-us">About Us</a>
+  </div>
+</footer>
+<div class="footer-bottom">© 2025 Sri Garlands. All rights reserved. | Handcrafted with 🌸</div>
+
+<script>
+  function handleEnquiry() {
+    var name = document.getElementById('cta-name').value.trim();
+    var phone = document.getElementById('cta-phone').value.trim();
+    var occasion = document.getElementById('cta-occasion').value.trim();
+    if (!name || !phone) {
+      alert('Please enter your name and phone number.');
+      return;
+    }
+    // You can replace this with a form submission to your backend or a WhatsApp redirect
+    var msg = 'Hi! I would like to place an order.\nName: ' + name + '\nPhone: ' + phone + '\nOccasion: ' + (occasion || 'Not specified');
+    var waUrl = 'https://wa.me/91XXXXXXXXXX?text=' + encodeURIComponent(msg);
+    window.open(waUrl, '_blank');
+  }
+</script>
+
+</body>
+</html>
